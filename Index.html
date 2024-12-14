@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn with Fun</title>
+    <meta name="description" content="Learn with Fun is an educational platform that offers interactive quizzes, video lessons, and e-books and resources for learners of all ages.">
+    <meta name="keywords" content="education, learning, quizzes, video lessons, e-books, resources">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+            position: center;
+            color: #00be6c;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0e6867;
+            color: #fff;
+            padding: 8px 15px;
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #0e6867;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-right: 20px;
+        }
+
+        header nav a {
+            color: #ffffffb9;
+            text-decoration: none;
+        }
+
+        .header-button {
+            margin-right: 20px;
+        }
+
+        .header-button .button {
+            background-color: #00a07d;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .header-button .button:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background-image: url('https://static.vecteezy.com/system/resources/thumbnails/031/586/515/small_2x/a-warm-welcome-back-to-school-with-neatly-arranged-school-supplies-ai-generated-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background-blend-mode: multiply;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 55px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .cta-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #00a07d;
+            color: #ffffff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Features Section Styles */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #f7f7f7;
+        }
+
+        .feature {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #00c5bb;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            background-color: #ffffff;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+            background-color: #eafaf9;
+        }
+
+        .feature i {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #0e6867;
+        }
+
+        .learn-more {
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            background-color: #23527c;
+        }
+
+        /* Media Section Styles */
+        .media {
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .media iframe {
+            width: 80%;
+            max-width: 800px;
+            height: 400px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer ul li {
+            margin: 0 10px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #0e6867;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .feature {
+                width: 90%;
+            }
+
+            .media iframe {
+                width: 100%;
+                height: 250px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 60vh;
+            }
+
+            .feature {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .media iframe {
+                height: 200px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Content</a>
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="about.html" class="button">About us</a></li>
+                <li><a href="contact-us.html" class="button">Contact us</a></li>
+            </ul>
+        </nav>
+        <h1>Learn with Fun</h1>
+        <p class="tagline">Empowering learners of all ages through interactive education</p>
+    </header>
+    <main id="main-content">
+        <section class="hero">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/031/586/515/small_2x/a-warm-welcome-back-to-school-with-neatly-arranged-school-supplies-ai-generated-photo.jpg" alt="Educational theme for back-to-school" loading="lazy">
+            <h2>Welcome to Learn with Fun</h2>
+            <p>The "Learn with Fun" webpage aims to educate users through interactive games, quizzes, and engaging activities for all ages.</p>
+            <div class="cta-container">
+                <a href="learn.html" class="button">Let's Start!</a>
+            </div>
+        </section>
+        <section class="features">
+            <h2>Explore Our Features</h2>
+            <div class="feature">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Interactive Quizzes</h3>
+                <p>Engage with fun and educational quizzes designed to test and improve your knowledge.</p>
+                <a href="indexx.html" class="learn-more">Learn More</a>
+            </div>
+            <div class="feature">
+                <i class="fas fa-video"></i>
+                <h3>Video Lessons</h3>
+                <p>Access high-quality video content to supplement your learning anytime, anywhere.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+        </section>
+        <section class="media">
+            <h2>Watch and Learn</h2>
+            <iframe src="https://www.youtube.com/embed/TjPFZaMe2yw?si=NA9V_iAtJR89W0N0" title="Educational video about Learn with Fun platform" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Learn with Fun</p>
+        <ul>
+            <li><a href="https://www.facebook.com/learnwithfun" aria-label="Facebook page"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://x.com/learnwithfun" aria-label="Twitter page"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+        <a href="#" class="back-to-top">Back to Top</a>
+    </footer>
+</body>
+</html>

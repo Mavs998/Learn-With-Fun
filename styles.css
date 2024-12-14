@@ -1,0 +1,204 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f7f7;
+  }
+  
+  .header {
+    background-color:   #0e6867;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quiz {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+  }
+  
+  .quiz-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+    width: 300px;
+  }
+  
+  .card h3 {
+    margin-top: 0;
+  }
+  
+  .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .card li {
+    margin-bottom: 10px;
+  }
+  
+  .card input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .video-lesson {
+    background-color: #61f1bf;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+  }
+
+  h1, h2 {
+    color: #000000; 
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333; 
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #0099ff; 
+  }
+  
+  iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Styling for Buttons */
+
+  .button {
+    background-color: #00a07d;
+    color: #ffffff;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Layout Techniques */
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  .quiz, .video-lesson {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  /* Responsive Design and Media Queries */
+  
+  @media (max-width:  768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    nav li {
+      margin-bottom: 10px;
+    }
+    .quiz, .video-lesson {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    iframe {
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      padding: 20px;
+    }
+    nav ul {
+      padding: 10px;
+    }
+    .quiz, .video-lesson {
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+    iframe {
+      height: 150px;
+    }
+  }
+  
+
+  .header {
+    role: "banner";
+  }
+  
+  nav {
+    role: "navigation";
+  }
+  
+  .quiz {
+    role: "region";
+    aria-label: "Quiz Time!";
+  }
+  
+  .video-lesson {
+    role: "region";
+    aria-label: "Video Lesson: Introduction to HTML";
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  input[type="radio"] {
+    font-size: 18px;
+  }
+  
+  iframe {
+    aria-label: "Video Lesson: Introduction to HTML";
+  }

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #00796b;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .button {
+            background-color: #00a07d;
+            color: #ffffff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+
+        #question {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #answer {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #submit {
+            background-color: #00796b;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        #submit:hover {
+            background-color: #004d40;
+        }
+
+        #feedback {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #progress {
+            font-size: 1.1rem;
+            color: #00796b;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            #question {
+                font-size: 1.4rem;
+            }
+
+            #answer {
+                font-size: 1rem;
+            }
+
+            #submit {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            font-size: 30px;
+            background: none;
+            border: none;
+            color: #00796b;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .back-button:hover {
+            color: #004d40;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Interactive Quiz</h1>
+        <div id="question-container">
+            <p id="question">What is the capital of France?</p>
+            <input type="text" id="answer" placeholder="Enter your answer" />
+            <button id="submit">Submit</button>
+        </div>
+        <p id="feedback" class="hidden"></p>
+        <p id="progress">Question 1 of 3</p>
+    </div>
+
+    <!-- Back Button with Arrow Icon -->
+    <a href="index.html">
+        <button class="back-button">&#8592;</button>
+    </a>
+
+    <script>
+        // Quiz Data
+        const quizData = [
+        { question: "What does HTML stand for?", answer: "HyperText Markup Language" },
+        { question: "What is the purpose of the <p> element in HTML?", answer: "Paragraph" },
+        { question: " What is the purpose of the href attribute in HTML?", answer: "specify a URL" },
+        { question: "What type of list is created using the <ul> element in HTML?", answer: "Unordered list" },
+        { question: "What is the HTML tag for a line break?", answer: "<br>" }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        // DOM elements
+        const questionElement = document.getElementById("question");
+        const answerElement = document.getElementById("answer");
+        const submitButton = document.getElementById("submit");
+        const feedbackElement = document.getElementById("feedback");
+        const progressElement = document.getElementById("progress");
+
+        // Function to show the current question
+        function loadQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionElement.textContent = currentQuestion.question;
+            answerElement.value = "";
+            feedbackElement.textContent = "";
+            progressElement.textContent = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
+        }
+
+        // Function to check the answer
+        function checkAnswer() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const userAnswer = answerElement.value.trim().toLowerCase();
+
+            if (userAnswer === currentQuestion.answer) {
+                score++;
+                feedbackElement.textContent = "Correct!";
+                feedbackElement.style.color = "#4CAF50";
+            } else {
+                feedbackElement.textContent = "Incorrect! The correct answer was: " + currentQuestion.answer;
+                feedbackElement.style.color = "#f44336";
+            }
+
+            feedbackElement.classList.remove("hidden");
+
+            // Move to the next question or show final result
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                setTimeout(loadQuestion, 1500);  // Load next question after 1.5 seconds
+            } else {
+                setTimeout(showResult, 1500);
+            }
+        }
+
+        // Function to show the result after all questions are answered
+        function showResult() {
+            questionElement.textContent = `Quiz Completed! Your Score: ${score} out of ${quizData.length}`;
+            answerElement.classList.add("hidden");
+            submitButton.classList.add("hidden");
+            feedbackElement.classList.add("hidden");
+            progressElement.classList.add("hidden");
+        }
+
+        // Event Listener for Submit Button
+        submitButton.addEventListener("click", checkAnswer);
+
+        // Initial question load
+        loadQuestion();
+    </script>
+</body>
+</html>
