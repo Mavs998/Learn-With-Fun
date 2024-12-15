@@ -1,204 +1,256 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f7f7f7;
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header Styles */
+.header {
+  background-color: #00796b;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.header nav li {
+  margin: 0;
+}
+
+.header nav a {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #388e3c;
+}
+
+/* Quiz Section Styles */
+.quiz {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.quiz h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00796b;
+}
+
+.quiz-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #00796b;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 10px;
+}
+
+.card input[type="radio"] {
+  margin-right: 10px;
+}
+
+.card label {
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.card label:hover {
+  color: #00796b;
+}
+
+/* Button Styles */
+.button {
+  display: inline-block;
+  background-color: #00796b;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #005b4f;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Video Lesson Section */
+.video-lesson {
+  padding: 30px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 30px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.video-lesson h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #00796b;
+}
+
+.video-lesson iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  gap: 15px;
+}
+
+footer li {
+  margin: 0;
+}
+
+footer a {
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+footer a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header nav ul {
+    flex-direction: column;
+    gap: 10px;
   }
-  
+
+  .card {
+    padding: 15px;
+  }
+
+  .video-lesson iframe {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
   .header {
-    background-color:   #0e6867;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .quiz {
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; 
-  }
-  
-  .quiz-cards {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
-  
-  .card {
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; 
-    width: 300px;
-  }
-  
-  .card h3 {
-    margin-top: 0;
-  }
-  
-  .card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .card li {
-    margin-bottom: 10px;
-  }
-  
-  .card input[type="radio"] {
-    margin-right: 10px;
-  }
-  
-  .video-lesson {
-    background-color: #61f1bf;
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; 
-  }
 
-  h1, h2 {
-    color: #000000; 
-    margin-bottom: 10px;
+  .header h1 {
+    font-size: 1.5rem;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    color: #333; 
-  }
-  
-  input[type="radio"] {
-    margin-right: 10px;
-    accent-color: #0099ff; 
-  }
-  
-  iframe {
-    width: 100%;
-    height: 315px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Styling for Buttons */
 
   .button {
-    background-color: #00a07d;
-    color: #ffffff;
-    padding: 20px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
-  
-  .button:hover {
-    background-color: #3e8e41;
-  }
-  
-  /* Layout Techniques */
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  nav li {
-    margin-right: 20px;
-  }
-  
-  .quiz, .video-lesson {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-  }
-  
-  /* Responsive Design and Media Queries */
-  
-  @media (max-width:  768px) {
-    .header {
-      flex-direction: column;
-      align-items: center;
-    }
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
-    nav li {
-      margin-bottom: 10px;
-    }
-    .quiz, .video-lesson {
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-    iframe {
-      height: 200px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .header {
-      padding: 20px;
-    }
-    nav ul {
-      padding: 10px;
-    }
-    .quiz, .video-lesson {
-      padding: 5px;
-      margin-bottom: 5px;
-    }
-    iframe {
-      height: 150px;
-    }
-  }
-  
 
-  .header {
-    role: "banner";
+  .quiz h2 {
+    font-size: 1.5rem;
   }
-  
-  nav {
-    role: "navigation";
-  }
-  
-  .quiz {
-    role: "region";
-    aria-label: "Quiz Time!";
-  }
-  
-  .video-lesson {
-    role: "region";
-    aria-label: "Video Lesson: Introduction to HTML";
-  }
-  
-  label {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  input[type="radio"] {
-    font-size: 18px;
-  }
-  
-  iframe {
-    aria-label: "Video Lesson: Introduction to HTML";
-  }
+}
