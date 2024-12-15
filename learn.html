@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn with Fun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,123 +12,190 @@
     <h1>Learn with Fun</h1>
     <nav>
       <ul>
-        <li><a href="Index.html" class="button">Home</a></li>
-        <li><a href="About.html" class="button">About</a></li>
+        <li><a href="index.html" class="button">Home</a></li>
+        <li><a href="about.html" class="button">About</a></li>
         <li><a href="contact_us.html" class="button">Contact</a></li>
       </ul>
     </nav>
   </header>
-  
-  <!-- Quiz Section -->
-  <section class="quiz">
-    <h2>Learning Quiz: Test your Knowledge!</h2>
-    <form id="quiz-form">
-      <div class="quiz-cards">
-        <div class="card">
-          <h3>What is the capital of France?</h3>
-          <ul>
-            <li>
-              <input type="radio" id="q1-paris" name="q1" value="Paris">
-              <label for="q1-paris">Paris</label>
-            </li>
-            <li>
-              <input type="radio" id="q1-london" name="q1" value="London">
-              <label for="q1-london">London</label>
-            </li>
-            <li>
-              <input type="radio" id="q1-berlin" name="q1" value="Berlin">
-              <label for="q1-berlin">Berlin</label>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>What is the largest planet in our solar system?</h3>
-          <ul>
-            <li>
-              <input type="radio" id="q2-earth" name="q2" value="Earth">
-              <label for="q2-earth">Earth</label>
-            </li>
-            <li>
-              <input type="radio" id="q2-saturn" name="q2" value="Saturn">
-              <label for="q2-saturn">Saturn</label>
-            </li>
-            <li>
-              <input type="radio" id="q2-jupiter" name="q2" value="Jupiter">
-              <label for="q2-jupiter">Jupiter</label>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>What is the smallest country in the world?</h3>
-          <ul>
-            <li>
-              <input type="radio" id="q3-vatican" name="q3" value="Vatican City">
-              <label for="q3-vatican">Vatican City</label>
-            </li>
-            <li>
-              <input type="radio" id="q3-monaco" name="q3" value="Monaco">
-              <label for="q3-monaco">Monaco</label>
-            </li>
-            <li>
-              <input type="radio" id="q3-nauru" name="q3" value="Nauru">
-              <label for="q3-nauru">Nauru</label>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>What is the largest mammal on Earth?</h3>
-          <ul>
-            <li>
-              <input type="radio" id="q4-blue-whale" name="q4" value="Blue Whale">
-              <label for="q4-blue-whale">Blue Whale</label>
-            </li>
-            <li>
-              <input type="radio" id="q4-fin-whale" name="q4" value="Fin Whale">
-              <label for="q4-fin-whale">Fin Whale</label>
-            </li>
-            <li>
-              <input type="radio" id="q4-humpback-whale" name="q4" value="Humpback Whale">
-              <label for="q4-humpback-whale">Humpback Whale</label>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>What is the highest mountain in the world?</h3>
-          <ul>
-            <li>
-              <input type="radio" id="q5-everest" name="q5" value="Mount Everest">
-              <label for="q5-everest">Mount Everest</label>
-            </li>
-            <li>
-              <input type="radio" id="q5-k2" name="q5" value="K2">
-              <label for="q5-k2">K2</label>
-            </li>
-            <li>
-              <input type="radio" id="q5-kangchenjunga" name="q5" value="Kangchenjunga">
-              <label for="q5-kangchenjunga">Kangchenjunga</label>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <button type="button" onclick="submitQuiz()">Submit Quiz</button>
-    </form>
-  </section>
-  
+
+  <!-- Card 1 -->
+  <div class="card">
+    <h3>What is the capital of France?</h3>
+    <ul>
+      <li>
+        <input type="radio" id="q1-paris" name="q1" value="Paris">
+        <label for="q1-paris">Paris</label>
+      </li>
+      <li>
+        <input type="radio" id="q1-london" name="q1" value="London">
+        <label for="q1-london">London</label>
+      </li>
+      <li>
+        <input type="radio" id="q1-berlin" name="q1" value="Berlin">
+        <label for="q1-berlin">Berlin</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <h3>What is the largest planet in our solar system?</h3>
+    <ul>
+      <li>
+        <input type="radio" id="q2-earth" name="q2" value="Earth">
+        <label for="q2-earth">Earth</label>
+      </li>
+      <li>
+        <input type="radio" id="q2-saturn" name="q2" value="Saturn">
+        <label for="q2-saturn">Saturn</label>
+      </li>
+      <li>
+        <input type="radio" id="q2-jupiter" name="q2" value="Jupiter">
+        <label for="q2-jupiter">Jupiter</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <h3>Which element has the chemical symbol "O"?</h3>
+    <ul>
+      <li>
+        <input type="radio" id="q3-oxygen" name="q3" value="Oxygen">
+        <label for="q3-oxygen">Oxygen</label>
+      </li>
+      <li>
+        <input type="radio" id="q3-hydrogen" name="q3" value="Hydrogen">
+        <label for="q3-hydrogen">Hydrogen</label>
+      </li>
+      <li>
+        <input type="radio" id="q3-carbon" name="q3" value="Carbon">
+        <label for="q3-carbon">Carbon</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <h3>What is the smallest continent by land area?</h3>
+    <ul>
+      <li>
+        <input type="radio" id="q4-antarctica" name="q4" value="Antarctica">
+        <label for="q4-antarctica">Antarctica</label>
+      </li>
+      <li>
+        <input type="radio" id="q4-australia" name="q4" value="Australia">
+        <label for="q4-australia">Australia</label>
+      </li>
+      <li>
+        <input type="radio" id="q4-europe" name="q4" value="Europe">
+        <label for="q4-europe">Europe</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card">
+    <h3>Who painted the Mona Lisa?</h3>
+    <ul>
+      <li>
+        <input type="radio" id="q5-davinci" name="q5" value="Leonardo da Vinci">
+        <label for="q5-davinci">Leonardo da Vinci</label>
+      </li>
+      <li>
+        <input type="radio" id="q5-michelangelo" name="q5" value="Michelangelo">
+        <label for="q5-michelangelo">Michelangelo</label>
+      </li>
+      <li>
+        <input type="radio" id="q5-raphael" name="q5" value="Raphael">
+        <label for="q5-raphael">Raphael</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="card">
+    <h3>Which organ is responsible for pumping blood in the body?</h3>
+    <ul>
+      <li>
+        <input type="radio" id="q6-heart" name="q6" value="Heart">
+        <label for="q6-heart">Heart</label>
+      </li>
+      <li>
+        <input type="radio" id="q6-liver" name="q6" value="Liver">
+        <label for="q6-liver">Liver</label>
+      </li>
+      <li>
+        <input type="radio" id="q6-lungs" name="q6" value="Lungs">
+        <label for="q6-lungs">Lungs</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="card">
+    <h3>What is the chemical formula for water?</h3>
+    <ul>
+      <li>
+        <input type="radio" id="q7-h2o" name="q7" value="H2O">
+        <label for="q7-h2o">H2O</label>
+      </li>
+      <li>
+        <input type="radio" id="q7-co2" name="q7" value="CO2">
+        <label for="q7-co2">CO2</label>
+      </li>
+      <li>
+        <input type="radio" id="q7-o2" name="q7" value="O2">
+        <label for="q7-o2">O2</label>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="card">
+    <h3>Which planet is known as the Red Planet?</h3>
+    <ul>
+      <li>
+        <input type="radio" id="q8-mars" name="q8" value="Mars">
+        <label for="q8-mars">Mars</label>
+      </li>
+      <li>
+        <input type="radio" id="q8-venus" name="q8" value="Venus">
+        <label for="q8-venus">Venus</label>
+      </li>
+      <li>
+        <input type="radio" id="q8-mercury" name="q8" value="Mercury">
+        <label for="q8-mercury">Mercury</label>
+      </li>
+    </ul>
+  </div>
+</div>
+<button type="button" onclick="submitQuiz()" class="button">Submit Quiz</button>
+</form>
+</section>
+
   <!-- Video Lesson Section -->
-  <section class="video-lesson">
-    <h2>Video Lesson: Introduction to HTML</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+  <section class="video-lesson" aria-labelledby="video-heading">
+    <h2 id="video-heading">Video Lesson: Introduction to HTML</h2>
+    <iframe 
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      allowfullscreen 
+      aria-label="Video Lesson: Introduction to HTML"></iframe>
   </section>
 
   <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      themeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+    });
+
     function submitQuiz() {
       const form = document.getElementById('quiz-form');
       const answers = {
         q1: 'Paris',
-        q2: 'Jupiter',
-        q3: 'Vatican City',
-        q4: 'Blue Whale',
-        q5: 'Mount Everest'
+        q2: 'Jupiter'
       };
       let score = 0;
       const results = [];
@@ -143,7 +211,7 @@
         }
       }
 
-      alert(`You scored ${score} out of 5\n\n${results.join('\n')}`);
+      alert(`You scored ${score} out of ${Object.keys(answers).length}\n\n${results.join('\n')}`);
     }
   </script>
 </body>
